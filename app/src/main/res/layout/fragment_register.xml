@@ -35,7 +35,8 @@
         android:layout_margin="15dp"
         android:src="@drawable/ic_back_arrow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@null" />
 
     <TextView
         android:id="@+id/signInTitle_textView"
@@ -134,5 +135,27 @@
         app:layout_constraintStart_toStartOf="@id/left_guideLine"
         app:layout_constraintEnd_toEndOf="@id/right_guideLine"
         app:layout_constraintTop_toBottomOf="@id/password_textInputLayout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/progressbar_constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="36dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

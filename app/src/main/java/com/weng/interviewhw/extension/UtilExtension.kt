@@ -17,7 +17,7 @@ fun checkEmailFormat(emailInput: String): Boolean {
 fun checkPasswordFormat(passwordInput: String): Boolean {
     val pattern = Pattern.compile("^" +
             "(?=.*[0-9])" +         //at least 1 digit
-            "(?=.*[a-zA-Z])" +      //at least 1 uppercase or lowercase letter
+//            "(?=.*[a-zA-Z])" +      //at least 1 uppercase or lowercase letter
             "(?=\\S+$)" +           //no white spaces
             ".{6,}" +               //at least 6 characters
             "$")
