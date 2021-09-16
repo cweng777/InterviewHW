@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.wallet.WalletFragment">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@null" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_guideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_guideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <ImageView
+        android:id="@+id/large_android_imageView"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_android_icon"
+        app:layout_constraintStart_toStartOf="@id/left_guideLine"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@null" />
+    <TextView
+        android:id="@+id/title_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Store"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/large_android_imageView"
+        app:layout_constraintTop_toTopOf="@id/large_android_imageView"/>
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp"
+        android:paddingBottom="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/shape_user_name_background"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/title_textView"
+        app:layout_constraintTop_toBottomOf="@id/title_textView"
+        tools:text="userName"/>
+
+    <ImageView
+        android:id="@+id/setting_imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/setting"
+        app:layout_constraintEnd_toEndOf="@id/right_guideLine"
+        app:layout_constraintTop_toTopOf="@id/large_android_imageView"
+        app:layout_constraintBottom_toBottomOf="@id/large_android_imageView"
+        android:contentDescription="@null" />
+    <ImageView
+        android:id="@+id/notification_imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/notification"
+        app:layout_constraintEnd_toStartOf="@id/setting_imageView"
+        app:layout_constraintTop_toTopOf="@id/large_android_imageView"
+        app:layout_constraintBottom_toBottomOf="@id/large_android_imageView"
+        android:contentDescription="@null" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/top_tab_tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:elevation="8dp"
+        android:background="@drawable/shape_bottom_tab_background"
+        app:tabIndicatorColor="@android:color/transparent"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabPaddingStart="0dp"
+        app:tabPaddingEnd="0dp"
+        app:tabRippleColor="@null"
+        app:layout_constraintTop_toBottomOf="@id/top_guideLine"
+        app:layout_constraintStart_toStartOf="@id/left_guideLine"
+        app:layout_constraintEnd_toEndOf="@id/right_guideLine"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_tab_tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

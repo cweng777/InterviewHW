@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:layout_width="70dp"
+    tools:layout_height="70dp"
+    tools:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/top_tab_icon_imageView"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:scaleType="center"
+        app:tint="@color/green20B2AA"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/top_tab_description_imageView"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:src="@drawable/promote"
+        android:contentDescription="@null" />
+
+    <TextView
+        android:id="@+id/top_tab_description_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_tab_icon_imageView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Promote"/>
+
+    <View
+        android:id="@+id/left_outline_view"
+        android:layout_width="0.5dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/gray757575"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible"/>
+
+    <View
+        android:id="@+id/right_outline_view"
+        android:layout_width="0.5dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/gray757575"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

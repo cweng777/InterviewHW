@@ -6,15 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.main.MainActivity">
 
+<!--    <Button-->
+<!--        android:id="@+id/logout_butotn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Logout"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <Button
-        android:id="@+id/logout_butotn"
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/bottom_guideLine"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.92"/>-->
+
+    <FrameLayout
+        android:id="@+id/fragment_frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_tab_tabLayout"/>
+
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@drawable/shape_shadow"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/bottom_tab_tabLayout"/>-->
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/bottom_tab_tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:elevation="8dp"
+        android:background="@drawable/shape_bottom_tab_background"
+        app:tabIndicatorColor="@android:color/transparent"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabPaddingStart="0dp"
+        app:tabPaddingEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_add_circle"
+        android:elevation="8dp"
+        app:elevation="8dp"
+        app:fabCustomSize="70dp"
+        app:maxImageSize="48dp"
+        app:tint="@color/white"
+        app:borderWidth="5dp"
+        android:backgroundTint="@color/green20B2AA"
+        app:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:contentDescription="@null" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

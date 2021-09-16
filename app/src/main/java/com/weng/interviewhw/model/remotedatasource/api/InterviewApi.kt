@@ -47,11 +47,19 @@ interface InterviewApi {
         @Field("passwd") password: String
     ): Response<SignInResponseBody>
 
+//    /**
+//     * 擷取使用者資訊
+//     */
+//    @GET("https://inner.ixensor.com/InterviewAPI/android/interview.php?api=get_user_info&token={token}")
+//    suspend fun getUserInfo(
+//        @Path("token") token: String
+//    ):Response<GetUserInfoResponseBody>
+
     /**
      * 擷取使用者資訊
      */
-    @GET("https://inner.ixensor.com/InterviewAPI/android/interview.php?api=get_user_info&token={token}")
+    @GET("https://inner.ixensor.com/InterviewAPI/android/interview.php?api=get_user_info")
     suspend fun getUserInfo(
-        @Path("token") token: String
+        @Query("token") token: String
     ):Response<GetUserInfoResponseBody>
 }

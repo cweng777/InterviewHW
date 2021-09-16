@@ -1,6 +1,9 @@
 package com.weng.interviewhw.extension
 
+import android.content.Context
 import android.util.Patterns
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputLayout
 import java.util.regex.Pattern
 
@@ -84,6 +87,13 @@ fun validateName(nameInput: String, textInputLayout: TextInputLayout): Boolean {
             true
         }
     }
+}
+
+/**
+ * 取 color
+ */
+fun Context.takeColor(@ColorRes color: Int): Int {
+    return ContextCompat.getColor(this, color)
 }
 
 
