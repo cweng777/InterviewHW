@@ -49,7 +49,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                     }
                     is SignInResultUI.Failure -> {
                         binding.progressbarConstraintLayout.isVisible = false
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
                     }
                 }
             }

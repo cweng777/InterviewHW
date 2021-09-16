@@ -9,12 +9,24 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface InterviewApi {
+//    /**
+//     * 註冊
+//     */
+//    @POST("InterviewAPI/android/interview.php?api=register")
+//    suspend fun register(
+//        @Body requestBody: RegisterRequestBody
+//    ): Response<RegisterResponseBody>
+
     /**
      * 註冊
      */
     @POST("InterviewAPI/android/interview.php?api=register")
+    @FormUrlEncoded
     suspend fun register(
-        @Body requestBody: RegisterRequestBody
+        @Field("first_name") firstName: String,
+        @Field("last_name") lastName: String,
+        @Field("mail") email: String,
+        @Field("passwd") password: String
     ): Response<RegisterResponseBody>
 
 //    /**

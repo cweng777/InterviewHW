@@ -17,7 +17,6 @@ import com.weng.interviewhw.model.data.register.ui.RegisterResultUI
 import com.weng.interviewhw.ui.activity.main.MainActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
     private var _binding: FragmentRegisterBinding? = null
@@ -45,12 +44,13 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                     }
                     RegisterResultUI.Success -> {
                         binding.progressbarConstraintLayout.isVisible = false
+                        Toast.makeText(requireContext(), "register success!!", Toast.LENGTH_LONG).show()
                         startActivity(Intent(requireContext(), MainActivity::class.java))
                         activity?.finish()
                     }
                     is RegisterResultUI.Failure -> {
                         binding.progressbarConstraintLayout.isVisible = false
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
                     }
                 }
             }

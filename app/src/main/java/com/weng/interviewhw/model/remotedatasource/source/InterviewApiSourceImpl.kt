@@ -29,14 +29,15 @@ class InterviewApiSourceImpl(
     ): Flow<RegisterResponseBody> {
         return flow {
             emit(
-                interviewApi.register(
-                    requestBody = RegisterRequestBody(
-                        firstName = firstName,
-                        lastName = lastName,
-                        email = email,
-                        password = password
-                    )
-                ).getResponseBody()
+//                interviewApi.register(
+//                    requestBody = RegisterRequestBody(
+//                        firstName = firstName,
+//                        lastName = lastName,
+//                        email = email,
+//                        password = password
+//                    )
+//                ).getResponseBody()
+                interviewApi.register(firstName, lastName, email, password).getResponseBody()
             )
         }.flowOn(ioDispatcher)
     }
