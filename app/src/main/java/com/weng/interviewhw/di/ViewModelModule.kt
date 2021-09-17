@@ -1,6 +1,5 @@
 package com.weng.interviewhw.di
 
-import com.weng.interviewhw.ui.activity.main.MainViewModel
 import com.weng.interviewhw.ui.activity.splash.SplashViewModel
 import com.weng.interviewhw.ui.fragment.login.RegisterViewModel
 import com.weng.interviewhw.ui.fragment.login.SignInViewModel
@@ -12,6 +11,5 @@ val viewModelModule = module {
     viewModel { SignInViewModel(get()) }
     viewModel { RegisterViewModel(get()) }
     viewModel { SplashViewModel(get()) }
-    viewModel { MainViewModel(get()) }
     viewModel { WalletViewModel(get(), get()) }
 }

@@ -7,5 +7,6 @@ class SplashViewModel(
      preferencesManager: PreferencesManager
 ): ViewModel() {
 
+    //取得登入token
     val token = preferencesManager.token
 }

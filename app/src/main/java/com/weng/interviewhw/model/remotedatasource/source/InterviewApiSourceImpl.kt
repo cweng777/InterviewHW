@@ -3,9 +3,7 @@ package com.weng.interviewhw.model.remotedatasource.source
 import com.weng.interviewhw.extension.getResponseBody
 import com.weng.interviewhw.model.remotedatasource.api.InterviewApi
 import com.weng.interviewhw.model.remotedatasource.body.getuserinfo.GetUserInfoResponseBody
-import com.weng.interviewhw.model.remotedatasource.body.register.RegisterRequestBody
 import com.weng.interviewhw.model.remotedatasource.body.register.RegisterResponseBody
-import com.weng.interviewhw.model.remotedatasource.body.signin.SignInRequestBody
 import com.weng.interviewhw.model.remotedatasource.body.signin.SignInResponseBody
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -29,14 +27,6 @@ class InterviewApiSourceImpl(
     ): Flow<RegisterResponseBody> {
         return flow {
             emit(
-//                interviewApi.register(
-//                    requestBody = RegisterRequestBody(
-//                        firstName = firstName,
-//                        lastName = lastName,
-//                        email = email,
-//                        password = password
-//                    )
-//                ).getResponseBody()
                 interviewApi.register(firstName, lastName, email, password).getResponseBody()
             )
         }.flowOn(ioDispatcher)
@@ -48,12 +38,6 @@ class InterviewApiSourceImpl(
     override suspend fun signIn(email: String, password: String): Flow<SignInResponseBody> {
         return flow {
             emit(
-//                interviewApi.login(
-//                    requestBody = SignInRequestBody(
-//                        email = email,
-//                        password = password
-//                    )
-//                ).getResponseBody()
                 interviewApi.login(email, password).getResponseBody()
             )
         }.flowOn(ioDispatcher)

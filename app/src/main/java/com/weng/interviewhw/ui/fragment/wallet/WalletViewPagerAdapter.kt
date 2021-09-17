@@ -1,7 +1,6 @@
 package com.weng.interviewhw.ui.fragment.wallet
 
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.weng.interviewhw.ui.fragment.common.CoinCouponFragment
 

@@ -66,9 +66,6 @@ class WalletFragment : Fragment(R.layout.fragment_wallet) {
                 is GetUserInfoResultUI.Success -> {
                     binding.progressBar.isVisible = false
                     setUserName(it.userInfoUI.firstName, it.userInfoUI.lastName)
-
-                    //todo: visible viewPager and TabLayout set true
-                    //todo: init viewPager and TabLayout
                     initWalletPagerFragment()
                 }
                 is GetUserInfoResultUI.Failure -> {
@@ -89,7 +86,6 @@ class WalletFragment : Fragment(R.layout.fragment_wallet) {
     private fun initWalletPagerFragment() {
         val walletMiddleTabs = WalletMiddleTab.values()
         walletViewPagerAdapter = WalletViewPagerAdapter(this, walletMiddleTabs)
-//        binding.topTabTabLayout.clipToPadding = false
         binding.walletViewPager2.adapter = walletViewPagerAdapter
         TabLayoutMediator(
             binding.middleTabLayout,

@@ -21,6 +21,9 @@ class CoinCouponFragment : Fragment(R.layout.fragment_coin_coupon) {
 
     private lateinit var walletCategory: WalletCategory
 
+    /**
+     * 使用shared viewModel
+     */
     private val parentWalletViewModel by lazy {
         requireParentFragment().viewModel<WalletViewModel>().value
     }

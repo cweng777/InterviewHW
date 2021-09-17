@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">InterviewHW</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fake_wallet_item_tab_count">4</string>
+    <string name="more">More</string>
+    <string name="revenue">Revenue</string>
+    <string name="social_rewards">Social Rewards</string>
+    <string name="interaction_rewards">Interaction Rewards</string>
+    <string name="xnc_bag">XNC(Bag)</string>
+    <string name="coin">Coin</string>
+    <string name="fake_bottom_tab_count">1</string>
+    <string name="store">Store</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="register">REGISTER</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="registration">Registration</string>
+    <string name="phone">PHONE</string>
+    <string name="explore">EXPLORE</string>
+    <string name="chat">CHAT</string>
 </resources>

@@ -5,8 +5,6 @@ import com.weng.interviewhw.model.data.getuserinfo.UserInfoResult
 import com.weng.interviewhw.model.data.register.RegisterResult
 import com.weng.interviewhw.model.data.share.Status
 import com.weng.interviewhw.model.data.signin.SignInResult
-import com.weng.interviewhw.model.remotedatasource.body.register.RegisterResponseBody
-import com.weng.interviewhw.model.remotedatasource.body.signin.SignInResponseBody
 import com.weng.interviewhw.model.remotedatasource.source.InterviewApiSource
 import com.weng.interviewhw.util.PreferencesManager
 import kotlinx.coroutines.CoroutineDispatcher
@@ -87,6 +85,4 @@ class InterviewRepositoryImpl(
             )
         }
     }
-    //{"status":0,"user_info":{"mail":"test@test.com","first_name":"John","last_name":"Lee"}}
-
 }

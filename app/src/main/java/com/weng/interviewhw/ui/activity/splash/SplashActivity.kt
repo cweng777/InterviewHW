@@ -9,6 +9,9 @@ import com.weng.interviewhw.ui.activity.main.MainActivity
 import kotlinx.coroutines.flow.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+/**
+ * 此頁判斷有沒有登入, 依登入狀態引導之該去之頁面
+ */
 class SplashActivity : AppCompatActivity() {
 
     private val viewModel by viewModel<SplashViewModel>()

@@ -39,7 +39,7 @@
         android:id="@+id/signInTitle_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome Back!"
+        android:text="@string/welcome_back"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -52,7 +52,7 @@
         android:id="@+id/signInDescription_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login to continue"
+        android:text="@string/login_to_continue"
         app:layout_constraintStart_toStartOf="@id/left_guideLine"
         app:layout_constraintEnd_toEndOf="@id/right_guideLine"
         app:layout_constraintTop_toBottomOf="@+id/signInTitle_textView"/>
@@ -61,7 +61,7 @@
         android:id="@+id/register_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create New Account"
+        android:text="@string/create_new_account"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -101,7 +101,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,7 +112,7 @@
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:backgroundTint="@color/blue6A5ACD"
-        android:text="SIGN IN"
+        android:text="@string/sign_in"
         app:layout_constraintStart_toStartOf="@id/left_guideLine"
         app:layout_constraintEnd_toEndOf="@id/right_guideLine"
         app:layout_constraintTop_toBottomOf="@id/password_textInputLayout"/>

@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.weng.interviewhw.R
 import com.weng.interviewhw.databinding.FragmentSignInBinding
-import com.weng.interviewhw.extension.*
+import com.weng.interviewhw.extension.hideKeyboard
+import com.weng.interviewhw.extension.validateEmail
+import com.weng.interviewhw.extension.validatePassword
 import com.weng.interviewhw.model.data.signin.ui.SignInResultUI
 import com.weng.interviewhw.ui.activity.login.LoginActivity
 import com.weng.interviewhw.ui.activity.main.MainActivity

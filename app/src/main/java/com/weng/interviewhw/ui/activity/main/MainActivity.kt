@@ -1,7 +1,6 @@
 package com.weng.interviewhw.ui.activity.main
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,28 +12,23 @@ import com.google.android.material.tabs.TabLayout
 import com.weng.interviewhw.R
 import com.weng.interviewhw.databinding.ActivityMainBinding
 import com.weng.interviewhw.extension.takeColor
-import com.weng.interviewhw.ui.activity.login.LoginActivity
 import com.weng.interviewhw.ui.fragment.chat.ChatFragment
 import com.weng.interviewhw.ui.fragment.explore.ExploreFragment
 import com.weng.interviewhw.ui.fragment.phone.PhoneFragment
 import com.weng.interviewhw.ui.fragment.wallet.WalletFragment
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-    private val viewModel by viewModel<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initBottomTab()
-        observeViewModel()
         setEventListener()
         setInitialSelectedTab(MainTab.Phone)
-        //if we have 2 new Wallet news, count should be passed when we get the news count from api
+        //假資料: if we have 2 new Wallet news, count should be passed when we get the news count from api
         setFakeWalletNewsCount(2)
     }
 
@@ -55,20 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun observeViewModel() {
-        viewModel.logoutState.observe(this) {
-            if (it == true) {
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
-            }
-        }
-    }
-
     private fun setEventListener() {
-//        binding.logoutButotn.setOnClickListener {
-//            viewModel.logout()
-//        }
-
         binding.bottomTabTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             private var isFirst = true
             override fun onTabSelected(tab: TabLayout.Tab) {
@@ -107,8 +88,7 @@ class MainActivity : AppCompatActivity() {
                         replaceFragment(ExploreFragment.newInstance())
                     }
                     MainTab.Wallet -> {
-                        //check count, if we have wallet count of 2
-                        val fakCount = "2"
+                        //點wallet後, 表示已看過, 使紅點notification消失
                         tab.customView?.apply {
                             findViewById<TextView>(R.id.count_textView)?.isVisible = false
                         }
@@ -142,7 +122,6 @@ class MainActivity : AppCompatActivity() {
     private fun setFakeWalletNewsCount(count: Int) {
         val selectTabPosition = MainTab.Wallet.ordinal
         val tab = binding.bottomTabTabLayout.getTabAt(selectTabPosition)
-        val color = takeColor(R.color.green20B2AA)
         tab?.customView?.apply {
             val countTextView = findViewById<TextView>(R.id.count_textView)
             countTextView.isVisible = true

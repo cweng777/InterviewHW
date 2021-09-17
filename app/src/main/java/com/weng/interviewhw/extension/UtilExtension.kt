@@ -1,7 +1,9 @@
 package com.weng.interviewhw.extension
 
+import android.app.Activity
 import android.content.Context
 import android.util.Patterns
+import android.view.inputmethod.InputMethodManager
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputLayout
@@ -87,6 +89,16 @@ fun validateName(nameInput: String, textInputLayout: TextInputLayout): Boolean {
             textInputLayout.error = null
             true
         }
+    }
+}
+
+/**
+ * 關閉鍵盤
+ */
+fun Activity.hideKeyboard() {
+    this.currentFocus?.let {
+        val imm = this.getSystemService(Activity.INPUT_METHOD_SERVICE) as? InputMethodManager
+        imm?.hideSoftInputFromWindow(it.windowToken, 0)
     }
 }
 
