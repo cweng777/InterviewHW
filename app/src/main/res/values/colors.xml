@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#ffcc0000</color>
     <color name="backgroundWhiteF8f8ff">#F8F8FF</color>
 
     <color name="purpleE6E6FA">#E6E6FA</color>
@@ -15,4 +16,6 @@
     <color name="blue5F9EA0">#5F9EA0</color>
     <color name="green20B2AA">#20B2AA</color>
     <color name="gray757575">#757575</color>
+    <color name="greenEFF4F3">#EFF4F3</color>
+    <color name="green80BCB7">#80BCB7</color>
 </resources>

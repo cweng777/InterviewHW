@@ -2,7 +2,7 @@ package com.weng.interviewhw.ui.fragment.wallet
 
 import com.weng.interviewhw.R
 
-enum class WalletTab {
+enum class WalletTopTab {
     Promote {
         override fun getIcon() = R.drawable.promote
         override fun getTitle() = "Promote"

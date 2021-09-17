@@ -11,8 +11,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.google.android.material.tabs.TabLayoutMediator
 import com.weng.interviewhw.R
 import com.weng.interviewhw.databinding.FragmentWalletBinding
+import com.weng.interviewhw.extension.takeColor
 import com.weng.interviewhw.model.data.getuserinfo.ui.GetUserInfoResultUI
 import com.weng.interviewhw.ui.activity.login.LoginActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -24,6 +26,8 @@ class WalletFragment : Fragment(R.layout.fragment_wallet) {
     private val binding get() = _binding!!
 
     private val viewModel by viewModel<WalletViewModel>()
+
+    private lateinit var walletViewPagerAdapter: WalletViewPagerAdapter
 
     companion object {
         fun newInstance() = WalletFragment()
@@ -65,6 +69,7 @@ class WalletFragment : Fragment(R.layout.fragment_wallet) {
 
                     //todo: visible viewPager and TabLayout set true
                     //todo: init viewPager and TabLayout
+                    initWalletPagerFragment()
                 }
                 is GetUserInfoResultUI.Failure -> {
                     binding.progressBar.isVisible = false
@@ -81,20 +86,47 @@ class WalletFragment : Fragment(R.layout.fragment_wallet) {
         }
     }
 
+    private fun initWalletPagerFragment() {
+        val walletMiddleTabs = WalletMiddleTab.values()
+        walletViewPagerAdapter = WalletViewPagerAdapter(this, walletMiddleTabs)
+//        binding.topTabTabLayout.clipToPadding = false
+        binding.walletViewPager2.adapter = walletViewPagerAdapter
+        TabLayoutMediator(
+            binding.middleTabLayout,
+            binding.walletViewPager2
+        ) { tab, position ->
+            when (walletMiddleTabs[position]) {
+                WalletMiddleTab.COIN -> {
+                    tab.text = walletMiddleTabs[position].value
+                }
+                WalletMiddleTab.COUPON -> {
+                    //if has 4 coupon
+                    val fakeCouponCount = 4
+                    val tabCouponTitle = "${walletMiddleTabs[position].value}($fakeCouponCount) "
+                    tab.text = tabCouponTitle
+                    //set tab badge
+                    val badge = tab.orCreateBadge
+                    badge.backgroundColor = requireContext().takeColor(R.color.red)
+                    badge.horizontalOffset = 11 //adjust offset so it would not get clipped off
+                }
+            }
+        }.attach()
+    }
+
     private fun setUserName(firstName: String, lastName: String) {
         val userName = "$firstName $lastName"
         binding.userName.text = userName
     }
 
     private fun initTopTab() {
-        val walletTabs = WalletTab.values()
+        val walletTabs = WalletTopTab.values()
         for (tab in walletTabs) {
             val singleTabLayout = LayoutInflater.from(requireContext())
                 .inflate(R.layout.layout_wallet_top_tab, binding.topTabTabLayout, false)
             singleTabLayout.apply {
                 findViewById<ImageView>(R.id.top_tab_icon_imageView).setImageResource(tab.getIcon())
                 findViewById<TextView>(R.id.top_tab_description_imageView).text = tab.getTitle()
-                if (tab == WalletTab.ShoppingCart) {
+                if (tab == WalletTopTab.ShoppingCart) {
                     findViewById<View>(R.id.left_outline_view).isVisible = true
                     findViewById<View>(R.id.right_outline_view).isVisible = true
                 }

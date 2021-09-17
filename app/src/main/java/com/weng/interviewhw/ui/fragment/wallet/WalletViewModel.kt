@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.weng.interviewhw.extension.getFakeCoinList
+import com.weng.interviewhw.extension.getFakeCouponList
+import com.weng.interviewhw.model.data.getuserinfo.ui.CoinCouponInfo
 import com.weng.interviewhw.model.data.getuserinfo.ui.GetUserInfoResultUI
 import com.weng.interviewhw.model.data.getuserinfo.ui.UserInfoUI
 import com.weng.interviewhw.model.repository.InterviewRepository
@@ -44,6 +47,10 @@ class WalletViewModel(
                                 email = GetUserInfoResult.userInfo.email,
                                 firstName = GetUserInfoResult.userInfo.firstName,
                                 lastName = GetUserInfoResult.userInfo.lastName
+                            ),
+                            CoinCouponInfo(
+                                coinList = getFakeCoinList(),
+                                couponList = getFakeCouponList()
                             )
                         )
                     }

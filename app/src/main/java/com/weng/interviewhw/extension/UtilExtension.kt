@@ -5,6 +5,7 @@ import android.util.Patterns
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputLayout
+import com.weng.interviewhw.model.data.getuserinfo.ui.CoinCoupon
 import java.util.regex.Pattern
 
 /**
@@ -96,4 +97,66 @@ fun Context.takeColor(@ColorRes color: Int): Int {
     return ContextCompat.getColor(this, color)
 }
 
+/**
+ * 假資料: coin
+ */
+fun getFakeCoinList(): List<CoinCoupon> {
+    val coinList = mutableListOf<CoinCoupon>()
+    for (i in 1..6) {
+        val coinData = if (i % 2 == 0) {
+            CoinCoupon(
+                id = i,
+                coin = "9,102,619",
+                bag = "123",
+                dayPassed = 123,
+                interactionRewards = "+1.849",
+                socialRewards = "+1,681.213",
+                revenue = "+1,793.729",
+            )
+        } else {
+            CoinCoupon(
+                id = i,
+                coin = "9,102,619",
+                bag = "123",
+                dayPassed = 200,
+                interactionRewards = "+1.849",
+                socialRewards = "+1,681.213",
+                revenue = "+1,793.729",
+            )
+        }
+        coinList.add(coinData)
+    }
+    return coinList
+}
 
+/**
+ * 假資料: coupon
+ */
+fun getFakeCouponList(): List<CoinCoupon> {
+    val couponList = mutableListOf<CoinCoupon>()
+    for (i in 1..4) {
+        val couponData = if (i % 2 == 0) {
+            CoinCoupon(
+                id = i,
+                coin = "9,102,619",
+                bag = "123",
+                dayPassed = 123,
+                interactionRewards = "+1.849",
+                socialRewards = "+1,681.213",
+                revenue = "+1,793.729",
+            )
+        } else {
+            CoinCoupon(
+                id = i,
+                coin = "9,102,619",
+                bag = "123",
+                dayPassed = 200,
+                interactionRewards = "+1.849",
+                socialRewards = "+1,681.213",
+                revenue = "+1,793.729",
+            )
+        }
+        couponList.add(couponData)
+    }
+    return couponList
+}
